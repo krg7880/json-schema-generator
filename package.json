@@ -1,5 +1,5 @@
 {
-  "name": "schema-generator",
+  "name": "json-schema-generator",
   "version": "0.1.0",
   "description": "Generates a schema based on draft-v4",
   "main": "index.js",
@@ -9,6 +9,12 @@
   "bin": {
     "json-schema-generator": "./bin/json-schema-generator"
   },
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/krg7880/json-schema-generator/issues"
+  },
+  "homepage": "https://github.com/krg7880/json-schema-generator",
+  "_id": "json-schema-generator@1.21.5",
   "dependencies": {
     "chai": "*",
     "optimist": "^0.6.1",
