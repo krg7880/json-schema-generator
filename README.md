@@ -1,7 +1,7 @@
 json-schema-generator
 =====================
 
-Fist pass at creating a generator for generating JSON schema based on draft v4. Please not that this generator does not support all of the features defined in v4 of the draft. More specifically, there's not support for $ref nodes or special nodes like location (lat, long), etc. These features will be added in future releases or you can always fork and make it better :-)
+First pass at creating a generator for generating JSON schema based on draft v4. Please not that this generator does not support all of the features defined in v4 of the draft. More specifically, there's not support for $ref nodes or special nodes like location (lat, long), etc. These features will be added in future releases or you can always fork and make it better :-)
 
 
 ### Install
