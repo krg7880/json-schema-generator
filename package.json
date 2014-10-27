@@ -1,0 +1,29 @@
+{
+  "name": "schema-generator",
+  "version": "0.0.0",
+  "description": "Generates a schema based on draft-v4",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^1.9.1",
+    "optimist": "^0.6.1",
+    "chai-json-schema": "^1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "schema",
+    "json",
+    "generator",
+    "draft",
+    "v4"
+  ],
+  "author": "Kirk R. Gordon",
+  "license": "MIT"
+}
