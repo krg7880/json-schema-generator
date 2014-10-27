@@ -6,13 +6,19 @@
   "directories": {
     "test": "test"
   },
+  "bin": {
+    "json-schema-generator": "./bin/json-schema-generator"
+  },
   "dependencies": {
-    "chai": "^1.9.1",
+    "chai": "*",
     "optimist": "^0.6.1",
-    "chai-json-schema": "^1.1.0"
+    "mkdirp": "^0.5.0",
+    "request": "^2.47.0"
   },
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+    "chai": "^1.9.2",
+    "chai-json-schema": "^1.1.0"
   },
   "scripts": {
     "test": "npm test"
