@@ -6,6 +6,8 @@ Generates draft v4 schema from a local file or a remote JSON url.
 ### Install
 git clone https://github.com/krg7880/json-schema-generator
 
+cd json-schema-generator
+
 npm install .
 
 ### Usage 
