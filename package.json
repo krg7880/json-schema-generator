@@ -1,6 +1,6 @@
 {
   "name": "schema-generator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generates a schema based on draft-v4",
   "main": "index.js",
   "directories": {
