@@ -60,7 +60,6 @@ if (argv.file) {
       body = (utils.isString(body)) ? JSON.parse(body) : body;
       var filename = setName(argv.url);
       process(body, filename);
-      console.log('filename', filename);
       if (argv.jsondir) {
         writeFile(body, argv.jsondir + '/' + filename);
       }
