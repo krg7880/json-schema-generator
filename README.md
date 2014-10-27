@@ -8,10 +8,15 @@ git clone https://github.com/krg7880/json-schema-generator
 
 npm install .
 
-### Usage
+### Usage 
 ```bash
+# JSON URL
 node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
-	 --url http://www.nytimes.com/svc/video/api/playlist/1194811622188
+	 --url <url of json document>
+
+# JSON PATH
+node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
+	 --file <path to json document>
 ```
 
 
