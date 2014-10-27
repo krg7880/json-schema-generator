@@ -14,7 +14,6 @@
     "url": "https://github.com/krg7880/json-schema-generator/issues"
   },
   "homepage": "https://github.com/krg7880/json-schema-generator",
-  "_id": "json-schema-generator@1.21.5",
   "dependencies": {
     "chai": "*",
     "optimist": "^0.6.1",
