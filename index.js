@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+@see http://tools.ietf.org/html/draft-fge-json-schema-validation-00#page-13
+*/
+
 var Generator = require('./lib/generator');
 var utils = require('./lib/utils');
 var argv = require('optimist').argv;
@@ -12,16 +16,19 @@ var parser = require('json-promise');
 // cli arguments
 var jsondir = argv.jsondir;
 var schemadir = argv.schemadir;
+var file = argv.file;
+var url = argv.url;
+var disableAdditionalProperties = argv.disableAdditionalProperties || null;
 
-if (!argv.schemadir) {
+if (!schemadir) {
   throw new Error('Please specfiy an output directory to store the generated schema!');
 } 
 
-if (!argv.file && !argv.url) {
+if (!file && !url) {
   throw new Error('Please specify a local file (path) or a URL of a JSON document');
 }
 
-mkdirp.sync(argv.schemadir);
+mkdirp.sync(schemadir);
 
 var logger = function(msg) {
   console.log("\n", msg);
@@ -37,7 +44,7 @@ the document will be saved locally.
   resource
 @return void
 */
-var fetchResource = function(url) {
+var fetchResource = function(url, jsondir) {
   logger('Fetching URL resource: ' + url);
 
   request(url, function (error, response, body) {
@@ -46,8 +53,8 @@ var fetchResource = function(url) {
         .then(function(data) {
           var filename = getName(url);
           process(data, filename);
-          if (argv.jsondir) {
-            writeFile(body, argv.jsondir + '/' + filename);
+          if (jsondir) {
+            writeFile(body, jsondir + '/' + filename);
           }
         }).catch(function(e) {
           throw e;
@@ -100,6 +107,7 @@ file location.
 @return void
 */
 var writeFile = function(contents, file) {
+  file = path.resolve(path.normalize(file));
   parser.stringify(contents)
     .then(function(data) {
       var writer = fs.createWriteStream(file);
@@ -132,18 +140,19 @@ var getName = function(str) {
 
 var process = function(data, filename) {
   var generator = new Generator();
+  generator.disableAdditionalProperties(disableAdditionalProperties);
   var schema = generator.generate(data);
-  var filepath = path.resolve(path.normalize(argv.schemadir + '/' + filename));
+  var filepath = schemadir + '/' + filename;
   writeFile(schema, filepath);
 }
 
-if (argv.file) {
-  readFile(argv.file);
+if (file) {
+  readFile(file);
 } else {
-  if (argv.jsondir) {
-    mkdirp.sync(argv.jsondir);
+  if (jsondir) {
+    mkdirp.sync(jsondir);
   } 
 
-  fetchResource(argv.url);
+  fetchResource(url, jsondir);
 }
 
