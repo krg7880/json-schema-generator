@@ -9,6 +9,10 @@ var path = require('path');
 var request = require('request');
 var parser = require('json-promise');
 
+// cli arguments
+var jsondir = argv.jsondir;
+var schemadir = argv.schemadir;
+
 if (!argv.schemadir) {
   throw new Error('Please specfiy an output directory to store the generated schema!');
 } 
@@ -91,18 +95,22 @@ var readFile = function(filepath) {
 Writes the given data to the specified
 file location.
 
-@param {String} data The data to write to the FS
+@param {String} contents The data to write to the FS
 @param {String} file The file to write the data to
 @return void
 */
-var writeFile = function(data, file) {
-  var writer = fs.createWriteStream(file);
-  data = utils.isString(data) ? data : JSON.stringify(data);
-  var buff = new Buffer(Buffer.byteLength(data));
-  buff.write(data.toString('utf8'));
-  writer.write(buff);
-  writer.close();
-  logger('Created file: ' + file);
+var writeFile = function(contents, file) {
+  parser.stringify(contents)
+    .then(function(data) {
+      var writer = fs.createWriteStream(file);
+      var buff = new Buffer(Buffer.byteLength(data));
+      buff.write(data.toString('utf8'));
+      writer.write(buff);
+      writer.close();
+      logger('Created file: ' + file);
+    }).catch(function(e) {
+      throw e;
+    })
 };
 
 /**
