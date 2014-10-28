@@ -5,6 +5,7 @@ var utils = require('./lib/utils');
 var argv = require('optimist').argv;
 var mkdirp = require('mkdirp');
 var fs = require('fs');
+var path = require('path');
 var request = require('request');
 
 if (!argv.schemadir) {
@@ -17,6 +18,10 @@ if (!argv.file && !argv.url) {
 
 mkdirp.sync(argv.schemadir);
 
+var logger = function(msg) {
+  console.log("\n", msg);
+};
+
 var writeFile = function(data, file) {
   var writer = fs.createWriteStream(file);
   data = utils.isString(data) ? data : JSON.stringify(data);
@@ -24,6 +29,7 @@ var writeFile = function(data, file) {
   buff.write(data.toString('utf8'));
   writer.write(buff);
   writer.close();
+  logger('Wrote schema: ' + file);
 }
 
 var setName = function(str) {
@@ -38,7 +44,8 @@ var setName = function(str) {
 var process = function(data, filename) {
   var generator = new Generator();
   var schema = generator.generate(data);
-  writeFile(schema, argv.schemadir + '/' + filename);
+  var filepath = path.resolve(path.normalize(argv.schemadir + '/' + filename));
+  writeFile(schema, filepath);
 }
 
 if (argv.file) {
@@ -49,11 +56,15 @@ if (argv.file) {
   }).on('end', function() {
     var filename = setName(argv.file);
     process(JSON.parse(data.toString('utf8')), filename);
+  }).on('error', function(e) {
+    throw e;
   });
 } else {
   if (argv.jsondir) {
     mkdirp.sync(argv.jsondir);
   } 
+
+  logger('Fetching URL resource: ' + argv.url);
 
   request(argv.url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -62,6 +73,12 @@ if (argv.file) {
       process(body, filename);
       if (argv.jsondir) {
         writeFile(body, argv.jsondir + '/' + filename);
+      }
+    } else {
+      logger('There was an error loading the requested resource');
+      logger('>>> ' + argv.url);
+      if (error) {
+        logger(e.toString('utf8'));
       }
     }
   })
