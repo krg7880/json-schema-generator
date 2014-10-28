@@ -21,3 +21,6 @@ node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 	 --file <path to json document>
 ```
+
+### Background
+I created this schema generator to validate the responses from an API I created. As the API is enhanced and nodes are added or removed, the schema is regenerated and validated against the newly deployed API.
