@@ -48,7 +48,7 @@ if (argv.file) {
     data += chunks;
   }).on('end', function() {
     var filename = setName(argv.file);
-    process(data, filename);
+    process(JSON.parse(data.toString('utf8')), filename);
   });
 } else {
   if (argv.jsondir) {
