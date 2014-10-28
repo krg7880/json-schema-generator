@@ -7,6 +7,7 @@ var mkdirp = require('mkdirp');
 var fs = require('fs');
 var path = require('path');
 var request = require('request');
+var parser = require('json-promise');
 
 if (!argv.schemadir) {
   throw new Error('Please specfiy an output directory to store the generated schema!');
@@ -37,12 +38,16 @@ var fetchResource = function(url) {
 
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      body = (utils.isString(body)) ? JSON.parse(body) : body;
-      var filename = getName(url);
-      process(body, filename);
-      if (argv.jsondir) {
-        writeFile(body, argv.jsondir + '/' + filename);
-      }
+      parser.parse(body)
+        .then(function(data) {
+          var filename = getName(url);
+          process(data, filename);
+          if (argv.jsondir) {
+            writeFile(body, argv.jsondir + '/' + filename);
+          }
+        }).catch(function(e) {
+          throw e;
+        });
     } else {
       logger('There was an error loading the requested resource');
       logger('>>> ' + url);
@@ -64,13 +69,19 @@ the schema.
 @return void
 */
 var readFile = function(filepath) {
-  var data = '';
+  var body = '';
   reader = fs.createReadStream(filepath);
   reader.on('data', function(chunks) {
-    data += chunks;
+    body += chunks;
   }).on('end', function() {
-    var filename = getName(filepath);
-    process(JSON.parse(data.toString('utf8')), filename);
+    parser.parse(body)
+      .then(function(data) {
+        var filename = getName(filepath);
+        process(data, filename);
+      }).catch(function(e) {
+        throw e;
+      });
+
   }).on('error', function(e) {
     throw e;
   });
@@ -91,7 +102,7 @@ var writeFile = function(data, file) {
   buff.write(data.toString('utf8'));
   writer.write(buff);
   writer.close();
-  logger('Wrote schema: ' + file);
+  logger('Created file: ' + file);
 };
 
 /**
