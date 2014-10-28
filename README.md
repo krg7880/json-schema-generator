@@ -24,3 +24,8 @@ node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 
 ### Background
 I created this schema generator to validate the responses from an API I created. As the API is enhanced and nodes are added or removed, the schema is regenerated and validated against the newly deployed API.
+
+### Validating Documents
+JSON documents can be validated against schemas using [chai-json-schema](http://chaijs.com/plugins/chai-json-schema). 
+
+See the tests under (/test) for example usage.
