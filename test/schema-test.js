@@ -13,7 +13,7 @@ data = JSON.parse(data.toString('utf8'))
 schema = JSON.parse(schema.toString('utf8'));
 
 describe('Generator', function() {
-	it.only('should not contain additionalProperties', function() {
+	it('should not contain additionalProperties', function() {
 		expect(data).to.be.jsonSchema(schema);
 	});
 });
