@@ -1,7 +1,7 @@
 json-schema-generator
 =====================
 
-First pass at creating a generator for generating JSON schema based on draft v4. Please not that this generator does not support all of the features defined in v4 of the draft. More specifically, there's not support for $ref nodes or special nodes like location (lat, long), etc. These features will be added in future releases or you can always fork and make it better :-)
+JSON schema generated based on draft-v4 of the specification. Note that the full spec if not yet supported. The compiler will be enhanced to support as much as possible. More specifically, there's no support for $ref nodes or special nodes like location (lat, long), etc. These features will be added in future releases or you can always fork and make it better :-)
 
 
 ### Install
@@ -23,7 +23,7 @@ node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 ```
 
 ### Background
-I created this schema generator to validate the responses from an API I created. As the API is enhanced and nodes are added or removed, the schema is regenerated and validated against the newly deployed API.
+I created this schema generator to validate JSON responses from APIs. As the JSON API is enhanced and nodes are added or removed from the response, the schema is regenerated and validated against the newly deployed API.
 
 ### Validating Documents
 JSON documents can be validated against schemas using [chai-json-schema](http://chaijs.com/plugins/chai-json-schema). See the tests under [test](https://github.com/krg7880/json-schema-generator/tree/master/test) for example usage.
