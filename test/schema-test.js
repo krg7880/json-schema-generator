@@ -1,13 +1,19 @@
-// 'use strict';
+'use strict';
 
-// var path = require('path');
-// var fs = require('fs');
-// var chai = require('chai');
-// chai.use(require('chai-json-schema'));
-// var expect = chai.expect;
-// var schema = fs.readFileSync(path.resolve(process.env.PWD) + '/schema.json');
-// var data = fs.readFileSync(path.resolve(process.env.PWD) + '/test.json');
-// data = JSON.parse(data.toString('utf8'))
-// schema = JSON.parse(schema.toString('utf8'));
+var path = require('path');
+var fs = require('fs');
+var chai = require('chai');
+chai.use(require('chai-json-schema'));
 
-// expect(data).to.be.jsonSchema(schema);
+var expect = chai.expect;
+var schema = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/schema/json.json');
+var data = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/json/json.json');
+
+data = JSON.parse(data.toString('utf8'))
+schema = JSON.parse(schema.toString('utf8'));
+
+describe('Generator', function() {
+  it('should not contain additionalProperties', function() {
+    expect(data).to.be.jsonSchema(schema);
+  });
+});
