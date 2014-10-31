@@ -4,12 +4,13 @@ json-schema-generator
 JSON schema generated based on draft-v4 of the specification. Note that the full spec if not yet supported. The compiler will be enhanced to support as much as possible. More specifically, there's no support for $ref nodes or special nodes like location (lat, long), etc. These features will be added in future releases or you can always fork and make it better :-)
 
 
-### Install
-git clone https://github.com/krg7880/json-schema-generator
+### Install (GIT)
+- git clone https://github.com/krg7880/json-schema-generator
+- cd json-schema-generator
+- npm install .
 
-cd json-schema-generator
-
-npm install .
+### Install (NPM)
+- npm install json-schema-generator
 
 ### Usage 
 ```bash
