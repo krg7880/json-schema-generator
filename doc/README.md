@@ -96,6 +96,11 @@ given JSON document.
 
 <!-- Start lib/compiler.js -->
 
+## Compiler
+
+Schema generator using a AST
+tree.
+
 ## generate(tree, schema, parent)
 
 Generates a JSON schema based on the provided AST tree.
