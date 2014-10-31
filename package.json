@@ -1,7 +1,7 @@
 {
   "name": "json-schema-generator",
   "version": "0.1.0",
-  "description": "Generates a schema based on draft-v4",
+  "description": "JSON schema generator based on draft-v4.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -37,6 +37,6 @@
     "draft",
     "v4"
   ],
-  "author": "Kirk R. Gordon",
+  "author": "Kirk Gordon<kirk7880@gmail.com>",
   "license": "MIT"
 }
