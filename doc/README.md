@@ -7,6 +7,14 @@
 Generates an Abstract Syntax Tree
 used for generating the schema.
 
+## AST
+
+Abstract Syntax Tree Class
+
+### Return:
+
+* **Object** 
+
 ## generateHash(value)
 
 Computes the hex hash of the given value
@@ -18,6 +26,55 @@ Computes the hex hash of the given value
 ### Return:
 
 * **String** HEX value.
+
+## isAllSimilarObject(node)
+
+Checks if the elements in the given node are all
+equal. 
+
+### Params:
+
+* **node** *node* JSON node to inspect
+
+### Return:
+
+* **Object** 
+
+## buildPrimative(tree, node)
+
+Inspect primitatives and apply the correct type
+and mark as required if the element contains a value.
+
+### Params:
+
+* **Object** *tree* Schema which represents the node
+* **Node** *node* The JSON node being inspected
+
+### Return:
+
+* **void** 
+
+## buildObject(tree, node)
+
+Inspect object properties and apply the correct
+type and mark as required if the element has set 
+properties.
+
+### Params:
+
+* **Object** *tree* Schema which represents the node
+* **Node** *node* The JSON node being inspected
+
+## buildObject(tree, node)
+
+Inspect array elements apply the correct
+type and mark as required if the element has 
+set properties.
+
+### Params:
+
+* **Object** *tree* Schema which represents the node
+* **Node** *node* The JSON node being inspected
 
 ## build(json)
 
