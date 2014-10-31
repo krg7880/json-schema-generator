@@ -52,19 +52,122 @@ node index.js --schemadir ${PWD}/schema \
 
 #### Example Output
 ```json
-{ '$schema': 'http://json-schema.org/draft-04/schema#',
-  description: '',
-  type: 'object',
-  properties: 
-   { title: { type: 'string', minLength: 1 },
-     type: { type: 'string', minLength: 1 },
-     required: 
-      { type: 'array',
-        uniqueItems: undefined,
-        minItems: undefined,
-        items: [Object] },
-     properties: { type: 'object', properties: [Object], required: [Object] } },
-  required: [ 'title', 'type', 'required', 'properties' ] }
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required": {
+      "type": "array",
+      "items": {
+        "required": [
+          "0",
+          "1",
+          "2"
+        ],
+        "properties": {
+          "0": {
+            "type": "string",
+            "minLength": 1
+          },
+          "1": {
+            "type": "string",
+            "minLength": 1
+          },
+          "2": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": {
+              "type": "number"
+            },
+            "uniqueItems": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "minItems",
+            "uniqueItems",
+            "items"
+          ]
+        },
+        "skin": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "taste": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minimum": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "minimum"
+          ]
+        }
+      },
+      "required": [
+        "colors",
+        "skin",
+        "taste"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "required",
+    "properties"
+  ]
+}
 ```
 
 ### Background
