@@ -10,7 +10,7 @@ JSON schema generated based on draft-v4 of the specification. Note that the full
 - npm install .
 
 ### Install (NPM)
-- npm install json-schema-generator
+- npm install [json-schema-generator](https://www.npmjs.org/package/json-schema-generator)
 
 ### Usage 
 ```bash
