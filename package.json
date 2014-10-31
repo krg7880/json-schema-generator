@@ -1,6 +1,6 @@
 {
   "name": "json-schema-generator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "JSON schema generator based on draft-v4.",
   "main": "index.js",
   "directories": {
