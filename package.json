@@ -24,6 +24,7 @@
     "chai": "^1.9.2",
     "chai-json-schema": "^1.1.0",
     "gulp": "^3.8.9",
+    "gulp-concat": "^2.4.1",
     "gulp-markdox": "^0.1.0",
     "mocha": "^1.21.4"
   },
