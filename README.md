@@ -18,8 +18,8 @@ JSON schema generated based on draft-v4 of the specification. Note that the full
 node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 	 --url <url of json document>
 
-# JSON PATH
-node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
+# JSON PATH 
+node index.js --schemadir ${PWD}/schema \
 	 --file <path to json document>
 ```
 
