@@ -14,13 +14,57 @@ JSON schema generated based on draft-v4 of the specification. Note that the full
 
 ### Usage 
 ```bash
-# JSON URL
+#### JSON URL
 node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
 	 --url <url of json document>
 
-# JSON PATH 
+#### JSON PATH 
 node index.js --schemadir ${PWD}/schema \
 	 --file <path to json document>
+```
+
+#### Example JSON
+```json
+{
+    "title": "fresh fruit schema v1",
+    "type": "object",
+    "required": ["skin", "colors", "taste"],
+    "properties": {
+        "colors": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "skin": {
+            "type": "string"
+        },
+        "taste": {
+            "type": "number",
+            "minimum": 5
+        }
+    }
+}
+```
+
+
+#### Example Output
+```json
+{ '$schema': 'http://json-schema.org/draft-04/schema#',
+  description: '',
+  type: 'object',
+  properties: 
+   { title: { type: 'string', minLength: 1 },
+     type: { type: 'string', minLength: 1 },
+     required: 
+      { type: 'array',
+        uniqueItems: undefined,
+        minItems: undefined,
+        items: [Object] },
+     properties: { type: 'object', properties: [Object], required: [Object] } },
+  required: [ 'title', 'type', 'required', 'properties' ] }
 ```
 
 ### Background
