@@ -5,7 +5,7 @@ var concat = require("gulp-concat");
 gulp.task("doc", function(){
   gulp.src("./lib/*.js")
     .pipe(markdox())
-    .pipe(concat("doc.md"))
+    .pipe(concat("README.md"))
     .pipe(gulp.dest("./doc"));
 });
 
