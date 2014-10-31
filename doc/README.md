@@ -34,7 +34,7 @@ equal.
 
 ### Params:
 
-* **node** *node* JSON node to inspect
+* **Object** *node* JSON node to inspect
 
 ### Return:
 
