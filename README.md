@@ -69,23 +69,10 @@ node index.js --schemadir ${PWD}/schema \
       "type": "array",
       "items": {
         "required": [
-          "0",
-          "1",
-          "2"
+          
         ],
         "properties": {
-          "0": {
-            "type": "string",
-            "minLength": 1
-          },
-          "1": {
-            "type": "string",
-            "minLength": 1
-          },
-          "2": {
-            "type": "string",
-            "minLength": 1
-          }
+          
         }
       }
     },
