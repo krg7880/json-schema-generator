@@ -1,6 +1,6 @@
 {
   "name": "json-schema-generator",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "JSON schema generator based on draft-v4.",
   "main": "./index.js",
   "directories": {
@@ -27,8 +27,7 @@
     "gulp": "^3.8.9",
     "gulp-concat": "^2.4.1",
     "gulp-markdox": "^0.1.0",
-    "mocha": "^1.21.4",
-    "pretty-data": "^0.40.0"
+    "mocha": "^1.21.4"
   },
   "scripts": {
     "test": "./node_modules/.bin/_mocha"
