@@ -10,12 +10,12 @@ var usageText = [
 		//"Extract a json-schema from a json document.",
 		"Usage: $0 <target>|--url <url>|--file <file>|--stdin",
 		"",
-		"If <target> is specified, it is interpreted as follows: a protocol (like http://) means url;",
-		"a dash (-) means stdin; anything else is treated as path to a local file."
+		"If <target> is specified, it is interpreted as follows: a protocol (like http://) ",
+		"means url; a dash (-) means stdin; anything else is treated as path to a local file."
 	].join('\n'),
 	optimist = require('optimist')
 		.usage(usageText)
-		.wrap(100)
+		.wrap(90)
 		.boolean(['pretty','force', 'stdin'])
 		.default('pretty', true)
 		.describe('stdin', 'Use stdin as input.')
