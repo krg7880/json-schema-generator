@@ -54,17 +54,17 @@ If <target> is specified, it is interpreted as follows: a protocol (like http://
 means url; a dash (-) means stdin; anything else is treated as path to a local file.
 
 Options:
-  --stdin, -0      Use stdin as input.                                                  
-  --url            Remote json document to use as input.                                
-  --file           Local json document to use as input.                                 
-  --schemadir, -o  Directory (or file, if ending with .json) where the schema will be
-                   stored.                                                              
-  --jsondir        Directory (or file, if ending with .json) where the source document
-                   is copied to. Useful with --url.                                     
+  --stdin, -0      Use stdin as input.                                              
+  --url            Remote json document to use as input.                            
+  --file           Local json document to use as input.                             
+  --schemadir, -o  Directory (or file, if ending with .json) where the schema will
+                   be stored.                                                       
+  --jsondir        Directory (or file, if ending with .json) where the source
+                   document is copied to. Useful with --url.                        
   --pretty         Whether to use pretty json format. Use --no-pretty for false.
-                                                                         [default: true]
-  --force, -f      If a destination file already exists, overwrite it.                  
-  --help, -h       Show this help text.                                                 
+                                                                     [default: true]
+  --force, -f      If a destination file already exists, overwrite it.              
+  --help, -h       Show this help text.                                             
 
 ```
 

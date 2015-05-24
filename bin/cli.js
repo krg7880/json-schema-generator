@@ -15,7 +15,7 @@ var usageText = [
 	].join('\n'),
 	optimist = require('optimist')
 		.usage(usageText)
-		.wrap(88)
+		.wrap(84)
 		.boolean(['pretty','force', 'stdin'])
 		.default('pretty', true)
 		.describe('stdin', 'Use stdin as input.')
