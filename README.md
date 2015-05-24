@@ -26,7 +26,7 @@ json-schema-generator path/to/input.json -o path/to/output.json
 #### JSON URL
 json-schema-generator https://sample.com/path/to/input.json --jsondir ./source/backup -o ./path/to/dir/
 #### JSON STDIN | STDOUT
-cat input.json | json-schema-generator - > output.json
+cat input.json | json-schema-generator > output.json
 ```
 
 ### Install as lib (NPM)
@@ -48,13 +48,13 @@ schemaObj = jsonSchemaGenerator(json);
 
 ### Cli usage
 ```
-Usage: node ./bin/cli.js <target>|--url <url>|--file <file>|--stdin
+Usage: json-schema-generator <target>|--url <url>|--file <file>|--stdin
 
 If <target> is specified, it is interpreted as follows: a protocol (like http://) 
-means url; a dash (-) means stdin; anything else is treated as path to a local file.
+means url; anything else is treated as path to a local file.
 
 Options:
-  --stdin, -0      Use stdin as input.                                              
+  --stdin          Use stdin as input.                                              
   --url            Remote json document to use as input.                            
   --file           Local json document to use as input.                             
   --schemadir, -o  Directory (or file, if ending with .json) where the schema will
