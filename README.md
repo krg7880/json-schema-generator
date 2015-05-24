@@ -5,22 +5,65 @@ JSON schema generated based on draft-v4 of the specification. Note that the full
 
 
 ### Install (GIT)
-- git clone https://github.com/krg7880/json-schema-generator
-- cd json-schema-generator
-- npm install .
-
-### Install (NPM)
-- npm install [json-schema-generator](https://www.npmjs.org/package/json-schema-generator)
-
-### Usage 
 ```bash
-#### JSON URL
-node index.js --schemadir ${PWD}/schema --jsondir ${PWD}/json \
-	 --url <url of json document>
+git clone https://github.com/krg7880/json-schema-generator
+cd json-schema-generator
+npm install .
+```
 
-#### JSON PATH 
-node index.js --schemadir ${PWD}/schema \
-	 --file <path to json document>
+### Install as cli (NPM)
+Run on the command line:
+
+```bash
+npm install -g json-schema-generator
+```
+
+Then use (for example):
+
+```bash
+#### JSON PATH
+json-schema-generator path/to/input.json -o path/to/output.json
+#### JSON URL
+json-schema-generator https://sample.com/path/to/input.json --jsondir ./source/backup -o ./path/to/dir/
+#### JSON STDIN | STDOUT
+cat input.json | json-schema-generator - > output.json
+```
+
+### Install as lib (NPM)
+Run on the command line:
+
+```bash
+npm install json-schema-generator --save-dev
+```
+
+Then, in your project:
+
+```javascript
+var jsonSchemaGenerator = require('json-schema-generator'),
+    obj = { some: { object: true } },
+    schemaObj;
+
+schemaObj = jsonSchemaGenerator(json);
+```
+
+### Cli usage
+```
+Usage: node ./bin/cli.js <target>|--url <url>|--file <file>|--stdin
+
+If <target> is specified, it is interpreted as follows: a protocol (like http://) means url;
+a dash (-) means stdin; anything else is treated as path to a local file.
+
+Options:
+  --stdin, -0      Use stdin as input.                                                              
+  --url            Remote json document to use as input.                                            
+  --file           Local json document to use as input.                                             
+  --schemadir, -o  Directory (or file, if ending with .json) where the schema will be stored.       
+  --jsondir        Directory (or file, if ending with .json) where the source document is copied
+                   to. Useful with --url.                                                           
+  --pretty         Whether to use pretty json format. Use --no-pretty for false.     [default: true]
+  --force, -f      If a destination file already exists, overwrite it.                              
+  --help, -h       Show this help text.                                                             
+
 ```
 
 #### Example JSON
