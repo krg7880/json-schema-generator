@@ -1,0 +1,70 @@
+'use strict';
+
+var child_process = require('child_process');
+var fs = require('fs');
+var chai = require('chai');
+chai.use(require('chai-json-schema'));
+var expect = chai.expect;
+
+/**
+ * Use the command line interface.
+ * @param {String|Array} args
+ * @param {String} [stdin]
+ * @returns {Array.<String>} [stdout, stderr]
+ */
+function runCli(args, stdin) {
+	if (typeof args === 'string') {
+ 		args = args.split(' ');
+	}
+	var response,
+		options = {};
+	args.unshift('./bin/cli.js');
+	if (stdin) {
+		options.input = stdin;
+	}
+	response = child_process.spawnSync('node', args, options);
+	return [response.stdout.toString('utf8'), response.stderr.toString('utf8')];
+}
+
+var inputLocalPath ='./test/fixtures/json/valid.json',
+	inputRemotePath = 'https://raw.githubusercontent.com/krg7880/json-schema-generator/master/test/fixtures/json/valid.json',
+	inputJSONString = fs.readFileSync(inputLocalPath, 'utf8'),
+	inputJSON = JSON.parse(inputJSONString);
+
+var schemaJSON;
+
+describe('Cli', function() {
+	it('Should be able to read a local file', function() {
+		schemaJSON = JSON.parse(runCli(inputLocalPath)[0]);
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+	});
+	it('Should be able to read a remote file', function() {
+		schemaJSON = JSON.parse(runCli(inputRemotePath)[0]);
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+		// Use it only once, github is not supposed to be used this way.
+		inputRemotePath = null;
+	});
+	it('Should be able to read stdin', function() {
+		schemaJSON = JSON.parse(runCli('-', inputJSONString)[0]);
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+	});
+	it('Should be able to write to a file', function() {
+		runCli([inputLocalPath, '-o', './test/_file.json']);
+		schemaJSON = JSON.parse(fs.readFileSync('./test/_file.json', 'utf8'));
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+		fs.unlinkSync('./test/_file.json');
+	});
+	it('Should be able to write into a directory', function() {
+		runCli([inputLocalPath, '--schemadir', './test/fixtures']);
+		schemaJSON = JSON.parse(fs.readFileSync('./test/fixtures/valid.json', 'utf8'));
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+		fs.unlinkSync('./test/fixtures/valid.json');
+	});
+	it('Should create subdirectories if necessary', function() {
+		runCli([inputLocalPath, '--schemadir', './test/fixtures/var/']);
+		schemaJSON = JSON.parse(fs.readFileSync('./test/fixtures/var/valid.json'));
+		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+		fs.unlinkSync('./test/fixtures/var/valid.json');
+		fs.rmdirSync('./test/fixtures/var');
+	});
+});

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "bin": {
-    "json-schema-generator": "./bin/json-schema-generator"
+    "json-schema-generator": "./bin/cli.js"
   },
   "readmeFilename": "Readme.md",
   "bugs": {
@@ -15,10 +15,11 @@
   },
   "homepage": "https://github.com/krg7880/json-schema-generator",
   "dependencies": {
-    "optimist": "^0.6.1",
+    "json-promise": "^1.1.8",
     "mkdirp": "^0.5.0",
-    "request": "^2.47.0",
-    "json-promise": "^1.1.8"
+    "optimist": "^0.6.1",
+    "pretty-data": "^0.40.0",
+    "request": "^2.47.0"
   },
   "devDependencies": {
     "chai": "^1.9.2",
