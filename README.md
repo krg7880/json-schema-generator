@@ -205,5 +205,8 @@ Options:
 ### Background
 I created this schema generator to validate JSON responses from APIs. As the JSON API is enhanced and nodes are added or removed from the response, the schema is regenerated and validated against the newly deployed API.
 
+### Tests
+Install [mocha](https://github.com/mochajs/mocha) globally (as cli) and run `npm test`.
+
 ### Validating Documents
 JSON documents can be validated against schemas using [chai-json-schema](http://chaijs.com/plugins/chai-json-schema). See the tests under [test](https://github.com/krg7880/json-schema-generator/tree/master/test) for example usage.
