@@ -45,7 +45,7 @@ describe('Cli', function() {
 		inputRemotePath = null;
 	});
 	it('Should be able to read stdin', function() {
-		schemaJSON = JSON.parse(runCli('-', inputJSONString)[0]);
+		schemaJSON = JSON.parse(runCli([], inputJSONString)[0]);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 	});
 	it('Should be able to write to a file', function() {
