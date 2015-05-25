@@ -8,10 +8,11 @@ var url = require('url'),
 
 var usageText = [
 		//"Extract a json-schema from a json document.",
-		"Usage: $0 <target>|--url <url>|--file <file>|--stdin",
+		"Usage: $0 [<target>|--url <url>|--file <file>|--stdin]",
 		"",
 		"If <target> is specified, it is interpreted as follows: a protocol (like http://) ",
-		"means url; anything else is treated as path to a local file."
+		"means url; anything else is treated as path to a local file. ",
+		"If no input file is specified and stdin is provided, stdin is used."
 	].join('\n'),
 	optimist = require('optimist')
 		.usage(usageText)

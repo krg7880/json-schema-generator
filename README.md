@@ -48,10 +48,11 @@ schemaObj = jsonSchemaGenerator(json);
 
 ### Cli usage
 ```
-Usage: json-schema-generator <target>|--url <url>|--file <file>|--stdin
+Usage: json-schema-generator [<target>|--url <url>|--file <file>|--stdin]
 
 If <target> is specified, it is interpreted as follows: a protocol (like http://) 
-means url; anything else is treated as path to a local file.
+means url; anything else is treated as path to a local file. 
+If no input file is specified and stdin is provided, stdin is used.
 
 Options:
   --stdin          Use stdin as input.                                              
