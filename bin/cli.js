@@ -8,10 +8,11 @@ var url = require('url'),
 
 var usageText = [
 		//"Extract a json-schema from a json document.",
-		"Usage: $0 <target>|--url <url>|--file <file>|--stdin",
+		"Usage: $0 [<target>|--url <url>|--file <file>|--stdin]",
 		"",
 		"If <target> is specified, it is interpreted as follows: a protocol (like http://) ",
-		"means url; a dash (-) means stdin; anything else is treated as path to a local file."
+		"means url; anything else is treated as path to a local file. ",
+		"If no input file is specified and stdin is provided, stdin is used."
 	].join('\n'),
 	optimist = require('optimist')
 		.usage(usageText)
@@ -19,7 +20,6 @@ var usageText = [
 		.boolean(['pretty','force', 'stdin'])
 		.default('pretty', true)
 		.describe('stdin', 'Use stdin as input.')
-		.alias('stdin', '0')
 		.describe('url', 'Remote json document to use as input.')
 		.describe('file', 'Local json document to use as input.')
 		.describe('schemadir', 'Directory (or file, if ending with .json) where the schema will be stored.')
@@ -84,9 +84,6 @@ function createConfig(argv) {
 						// if url thinks it has a host then I agree
 						config.src.type = IOType.URL;
 						config.src.path = argVal.href;
-					} else if (argVal.path === '-') {
-						// dash should mean stdin right?
-						config.src.type = IOType.STDIN;
 					} else {
 						// all else is local file dest
 						config.src.type = IOType.FILE;
@@ -120,6 +117,9 @@ function createConfig(argv) {
 	}
 	if (config.src.path) {
 		config.dest.defaultFileName = config.copy.defaultFileName = getName(config.src.path);
+	}
+	if (!config.src.type && !process.stdin.isTTY) {
+		config.src.type = IOType.STDIN;
 	}
 	return config;
 }

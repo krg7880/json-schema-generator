@@ -31,7 +31,7 @@ var inputLocalPath ='./test/fixtures/json/valid.json',
 	inputJSONString = fs.readFileSync(inputLocalPath, 'utf8'),
 	inputJSON = JSON.parse(inputJSONString);
 
-var schemaJSON;
+var schemaJSON, copyJSON;
 
 describe('Cli', function() {
 	it('Should be able to read a local file', function() {
@@ -45,7 +45,7 @@ describe('Cli', function() {
 		inputRemotePath = null;
 	});
 	it('Should be able to read stdin', function() {
-		schemaJSON = JSON.parse(runCli('-', inputJSONString)[0]);
+		schemaJSON = JSON.parse(runCli([], inputJSONString)[0]);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 	});
 	it('Should be able to write to a file', function() {
@@ -64,6 +64,13 @@ describe('Cli', function() {
 		runCli([inputLocalPath, '--schemadir', './test/fixtures/var/']);
 		schemaJSON = JSON.parse(fs.readFileSync('./test/fixtures/var/valid.json'));
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
+		fs.unlinkSync('./test/fixtures/var/valid.json');
+		fs.rmdirSync('./test/fixtures/var');
+	});
+	it('Should be able to create a copy of source', function() {
+		runCli([inputLocalPath, '--jsondir', './test/fixtures/var/']);
+		copyJSON = JSON.parse(fs.readFileSync('./test/fixtures/var/valid.json'));
+		expect(inputJSON).to.be.deep.equal(copyJSON);
 		fs.unlinkSync('./test/fixtures/var/valid.json');
 		fs.rmdirSync('./test/fixtures/var');
 	});
