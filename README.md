@@ -215,4 +215,7 @@ JSON documents can be validated against schemas using [chai-json-schema](http://
 ### Contributors
 Thanks to those who have contributed. These kind folks are listed below:
 
+* [nickyout](https://github.com/nickyout)
+* [Edward Silverton](https://github.com/edsilv)
+
 
