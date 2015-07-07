@@ -26,7 +26,7 @@ function runCli(args, stdin) {
 	return [response.stdout.toString('utf8'), response.stderr.toString('utf8')];
 }
 
-var inputLocalPath ='./test/fixtures/json/valid.json',
+var inputLocalPath = __dirname + '/fixtures/json/valid.json',
 	inputRemotePath = 'https://raw.githubusercontent.com/krg7880/json-schema-generator/master/test/fixtures/json/valid.json',
 	inputJSONString = fs.readFileSync(inputLocalPath, 'utf8'),
 	inputJSON = JSON.parse(inputJSONString);
@@ -35,17 +35,19 @@ var schemaJSON, copyJSON;
 
 describe('Cli', function() {
 	it('Should be able to read a local file', function() {
-		schemaJSON = JSON.parse(runCli(inputLocalPath)[0]);
+		var json = runCli(inputLocalPath);
+		console.log(typeof json);
+		schemaJSON = runCli(inputLocalPath);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 	});
 	it('Should be able to read a remote file', function() {
-		schemaJSON = JSON.parse(runCli(inputRemotePath)[0]);
+		schemaJSON = runCli(inputRemotePath);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 		// Use it only once, github is not supposed to be used this way.
 		inputRemotePath = null;
 	});
 	it('Should be able to read stdin', function() {
-		schemaJSON = JSON.parse(runCli([], inputJSONString)[0]);
+		schemaJSON = runCli([], inputJSONString);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 	});
 	it('Should be able to write to a file', function() {
