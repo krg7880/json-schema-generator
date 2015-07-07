@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+console.log('Node');
+
 var url = require('url'),
 	path = require('path'),
 	cliConsole = require('../lib/cli/console'),
@@ -166,6 +169,7 @@ handleInput(config.src, function(jsonString) {
 			handleOutput(config.dest, jsonSchemaString);
 		})
 		.catch(function(e) {
+			console.log(e);
 			errorHandler(e.toString('utf8'));
 		});
 });
