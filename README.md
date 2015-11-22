@@ -213,7 +213,11 @@ Install Stubby globally for returning mock data. Ports are defined under test/he
 npm install -g stubby
 ```
 
-Install [mocha](https://github.com/mochajs/mocha) globally (as cli) and run `npm test`.
+Install [mocha](https://github.com/mochajs/mocha) globally (as cli) and run 
+
+```bash
+npm test
+```
 
 ### Validating Documents
 JSON documents can be validated against schemas using [chai-json-schema](http://chaijs.com/plugins/chai-json-schema). See the tests under [test](https://github.com/krg7880/json-schema-generator/tree/master/test) for example usage.
