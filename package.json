@@ -33,7 +33,7 @@
     "node-stubby-server-cli": "^1.0.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/_mocha"
+    "test": "gulp"
   },
   "keywords": [
     "json schema",
