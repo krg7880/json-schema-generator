@@ -1,10 +1,12 @@
 'use strict';
 
+var path = require('path');
 var child_process = require('child_process');
 var fs = require('fs');
 var chai = require('chai');
 chai.use(require('chai-json-schema'));
 var expect = chai.expect;
+var stubbyHelper = require(path.normalize(__dirname + '/helpers/stubby-cli'));
 
 /**
  * Use the command line interface.
@@ -27,7 +29,8 @@ function runCli(args, stdin) {
 }
 
 var inputLocalPath = __dirname + '/fixtures/json/valid.json',
-	inputRemotePath = 'https://raw.githubusercontent.com/krg7880/json-schema-generator/master/test/fixtures/json/valid.json',
+	inputRemotePath =  'http://localhost:' + stubbyHelper.ports.stubs + '/valid/', 
+	//'https://raw.githubusercontent.com/krg7880/json-schema-generator/master/test/fixtures/json/valid.json',
 	inputJSONString = fs.readFileSync(inputLocalPath, 'utf8'),
 	inputJSON = JSON.parse(inputJSONString);
 
@@ -41,9 +44,9 @@ describe('Cli', function() {
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
 	});
 	it('Should be able to read a remote file', function() {
+		this.timeout(5000);
 		schemaJSON = runCli(inputRemotePath);
 		expect(inputJSON).to.be.jsonSchema(schemaJSON);
-		// Use it only once, github is not supposed to be used this way.
 		inputRemotePath = null;
 	});
 	it('Should be able to read stdin', function() {
