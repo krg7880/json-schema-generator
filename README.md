@@ -207,7 +207,7 @@ Options:
 I created this schema generator to validate JSON responses from APIs. As the JSON API is enhanced and nodes are added or removed from the response, the schema is regenerated and validated against the newly deployed API.
 
 ### Tests
-Install Stubby globally for returning mock data. Ports are defined under test/helpers/stubby-cli in the event the default port is in use, you can change them there.
+To run tests, including fetching documents via HTTP, we've added [node-stubby-server-cli](https://github.com/krg7880/) to help with serving mock data. The ports for the stub server is defined under *test/helpers/stubby-cli*, in the event the default port is in use, you can change them there.
 
 ```bash
 npm install -g stubby
