@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "completed": {
+            "type": "boolean"
+        },
+        "completed_at": {
+            "type": "null"
+        },
+        "url": {
+            "type": "string"
+        },
+        "fruits": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "number"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "neighbors": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "age": {
+                                "type": "number"
+                            },
+                            "cool": {
+                                "type": "null"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

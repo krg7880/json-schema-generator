@@ -1,0 +1,13 @@
+[
+    {
+        "id": 20,
+        "name": "coolio",
+        "completed": false,
+        "completed_at": null,
+        "url": "http://example.com",
+        "foo": [
+            "apple",
+            "bee"
+        ]
+    }
+]

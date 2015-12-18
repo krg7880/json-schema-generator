@@ -1,0 +1,46 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "number"
+            },
+            "name": {
+                "type": "string"
+            },
+            "tasks": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "number"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "priority": {
+                            "type": "number"
+                        },
+                        "due_date": {
+                            "type": "null"
+                        },
+                        "completed": {
+                            "type": "boolean"
+                        },
+                        "list_id": {
+                            "type": "number"
+                        },
+                        "created_at": {
+                            "type": "string"
+                        },
+                        "updated_at": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

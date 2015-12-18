@@ -1,0 +1,29 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "number"
+            },
+            "name": {
+                "type": "string"
+            },
+            "completed": {
+                "type": "boolean"
+            },
+            "completed_at": {
+                "type": "null"
+            },
+            "url": {
+                "type": "string"
+            },
+            "foo": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

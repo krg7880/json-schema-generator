@@ -18,7 +18,6 @@ describe('Generator', function() {
 
     var generatedSchema = generator(data);
     expect(generatedSchema).to.deep.equal(schema);
-    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(schema, null, 4));
   });
 
   it('should work with root objects', function() {
@@ -30,6 +29,18 @@ describe('Generator', function() {
 
     var generatedSchema = generator(data);
     expect(generatedSchema).to.deep.equal(schema);
+  });
+
+  it('should put the type property first, when possible', function() {
+    var data = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/json/ordering.json');
+    data = JSON.parse(data.toString('utf8'))
+
+
+    var schema = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/schema/ordering.json');
+    schema = JSON.parse(schema.toString('utf8'));
+
+
+    var generatedSchema = generator(data);
     expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(schema, null, 4));
   });
 });

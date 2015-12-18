@@ -1,0 +1,25 @@
+{
+    "id": 20,
+    "name": "coolio",
+    "completed": false,
+    "completed_at": null,
+    "url": "http://todos.stoplight.io/todos/20",
+    "fruits": [
+        "apple",
+        "plum"
+    ],
+    "address": {
+        "street": "123 foo ave",
+        "unit": 1,
+        "tags": [1, 2, 3],
+        "neighbors": [{
+            "name": "margret",
+            "age": 23,
+            "cool": null
+        }, {
+            "name": "john",
+            "age": 56,
+            "cool": true
+        }]
+    }
+}
