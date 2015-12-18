@@ -16,8 +16,9 @@ describe('Generator', function() {
     var schema = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/schema/array.json');
     schema = JSON.parse(schema.toString('utf8'));
 
-    let generatedSchema = generator(data);
+    var generatedSchema = generator(data);
     expect(generatedSchema).to.deep.equal(schema);
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(schema, null, 4));
   });
 
   it('should work with root objects', function() {
@@ -27,7 +28,8 @@ describe('Generator', function() {
     var schema = fs.readFileSync(path.resolve(process.env.PWD) + '/test/fixtures/schema/object.json');
     schema = JSON.parse(schema.toString('utf8'));
 
-    let generatedSchema = generator(data);
+    var generatedSchema = generator(data);
     expect(generatedSchema).to.deep.equal(schema);
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(schema, null, 4));
   });
 });
