@@ -43,4 +43,14 @@ describe('Generator', function() {
     var generatedSchema = generator(data);
     expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(schema, null, 4));
   });
+
+  it('should work with primitive null', function() {
+    var data = null,
+        generatedSchema = generator(data),
+        expectedSchema = {
+          type: 'null'
+        };
+
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
+  });
 });
