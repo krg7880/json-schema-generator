@@ -15,31 +15,6 @@ Abstract Syntax Tree Class
 
 * **Object** 
 
-## generateHash(value)
-
-Computes the hex hash of the given value
-
-### Params:
-
-* **Mixed** *value* Value to hash
-
-### Return:
-
-* **String** HEX value.
-
-## isAllSimilarObject(node)
-
-Checks if the elements in the given node are all
-equal. 
-
-### Params:
-
-* **Object** *node* JSON node to inspect
-
-### Return:
-
-* **Object** 
-
 ## buildPrimitive(tree, node)
 
 Inspect primitatives and apply the correct type
@@ -57,7 +32,7 @@ and mark as required if the element contains a value.
 ## buildObject(tree, node)
 
 Inspect object properties and apply the correct
-type and mark as required if the element has set 
+type and mark as required if the element has set
 properties.
 
 ### Params:
@@ -68,7 +43,7 @@ properties.
 ## buildObject(tree, node)
 
 Inspect array elements apply the correct
-type and mark as required if the element has 
+type and mark as required if the element has
 set properties.
 
 ### Params:
@@ -78,7 +53,7 @@ set properties.
 
 ## build(json)
 
-Initiates generating the AST from the 
+Initiates generating the AST from the
 given JSON document.
 
 ### Params:

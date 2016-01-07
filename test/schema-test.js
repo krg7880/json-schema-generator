@@ -53,4 +53,44 @@ describe('Generator', function() {
 
     expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
   });
+
+  it('should work with primitive boolean', function() {
+    var data = true,
+        generatedSchema = generator(data),
+        expectedSchema = {
+          type: 'boolean'
+        };
+
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
+  });
+
+  it('should work with primitive integer', function() {
+    var data = 9,
+        generatedSchema = generator(data),
+        expectedSchema = {
+          type: 'integer'
+        };
+
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
+  });
+
+  it('should work with primitive null', function() {
+    var data = 989.04,
+        generatedSchema = generator(data),
+        expectedSchema = {
+          type: 'number'
+        };
+
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
+  });
+
+  it('should work with primitive string', function() {
+    var data = 'bear',
+        generatedSchema = generator(data),
+        expectedSchema = {
+          type: 'string'
+        };
+
+    expect(JSON.stringify(generatedSchema, null, 4)).to.equal(JSON.stringify(expectedSchema, null, 4));
+  });
 });

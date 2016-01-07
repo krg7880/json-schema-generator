@@ -4,7 +4,7 @@
         "type": "object",
         "properties": {
             "id": {
-                "type": "number"
+                "type": "integer"
             },
             "name": {
                 "type": "string"
@@ -15,13 +15,13 @@
                     "type": "object",
                     "properties": {
                         "id": {
-                            "type": "number"
+                            "type": "integer"
                         },
                         "description": {
                             "type": "string"
                         },
                         "priority": {
-                            "type": "number"
+                            "type": "integer"
                         },
                         "due_date": {
                             "type": "null"
@@ -30,7 +30,7 @@
                             "type": "boolean"
                         },
                         "list_id": {
-                            "type": "number"
+                            "type": "integer"
                         },
                         "created_at": {
                             "type": "string"

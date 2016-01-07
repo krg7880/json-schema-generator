@@ -2,6 +2,7 @@
     "id": 20,
     "name": "coolio",
     "completed": false,
+    "weight": 220.453,
     "completed_at": null,
     "url": "http://todos.stoplight.io/todos/20",
     "fruits": [
