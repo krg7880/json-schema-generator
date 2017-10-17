@@ -2,239 +2,313 @@
   "name": "json-schema-generator",
   "version": "2.0.3",
   "dependencies": {
+    "ajv": {
+      "version": "5.2.3",
+      "from": "ajv@>=5.1.0 <6.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/ajv/-/ajv-5.2.3.tgz"
+    },
+    "asn1": {
+      "version": "0.2.3",
+      "from": "asn1@>=0.2.3 <0.3.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/asn1/-/asn1-0.2.3.tgz"
+    },
+    "assert-plus": {
+      "version": "1.0.0",
+      "from": "assert-plus@>=1.0.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/assert-plus/-/assert-plus-1.0.0.tgz"
+    },
+    "asynckit": {
+      "version": "0.4.0",
+      "from": "asynckit@>=0.4.0 <0.5.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/asynckit/-/asynckit-0.4.0.tgz"
+    },
+    "aws-sign2": {
+      "version": "0.7.0",
+      "from": "aws-sign2@>=0.7.0 <0.8.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/aws-sign2/-/aws-sign2-0.7.0.tgz"
+    },
+    "aws4": {
+      "version": "1.6.0",
+      "from": "aws4@>=1.6.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/aws4/-/aws4-1.6.0.tgz"
+    },
+    "bcrypt-pbkdf": {
+      "version": "1.0.1",
+      "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz",
+      "optional": true
+    },
+    "boom": {
+      "version": "4.3.1",
+      "from": "boom@>=4.0.0 <5.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/boom/-/boom-4.3.1.tgz"
+    },
+    "caseless": {
+      "version": "0.12.0",
+      "from": "caseless@>=0.12.0 <0.13.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/caseless/-/caseless-0.12.0.tgz"
+    },
+    "co": {
+      "version": "4.6.0",
+      "from": "co@>=4.6.0 <5.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/co/-/co-4.6.0.tgz"
+    },
+    "combined-stream": {
+      "version": "1.0.5",
+      "from": "combined-stream@>=1.0.5 <1.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/combined-stream/-/combined-stream-1.0.5.tgz"
+    },
+    "core-util-is": {
+      "version": "1.0.2",
+      "from": "core-util-is@1.0.2",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/core-util-is/-/core-util-is-1.0.2.tgz"
+    },
+    "cryptiles": {
+      "version": "3.1.2",
+      "from": "cryptiles@>=3.0.0 <4.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/cryptiles/-/cryptiles-3.1.2.tgz",
+      "dependencies": {
+        "boom": {
+          "version": "5.2.0",
+          "from": "boom@>=5.0.0 <6.0.0",
+          "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/boom/-/boom-5.2.0.tgz"
+        }
+      }
+    },
+    "dashdash": {
+      "version": "1.14.1",
+      "from": "dashdash@>=1.12.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/dashdash/-/dashdash-1.14.1.tgz"
+    },
+    "delayed-stream": {
+      "version": "1.0.0",
+      "from": "delayed-stream@>=1.0.0 <1.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/delayed-stream/-/delayed-stream-1.0.0.tgz"
+    },
+    "ecc-jsbn": {
+      "version": "0.1.1",
+      "from": "ecc-jsbn@>=0.1.1 <0.2.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz",
+      "optional": true
+    },
+    "extend": {
+      "version": "3.0.1",
+      "from": "extend@>=3.0.1 <3.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/extend/-/extend-3.0.1.tgz"
+    },
+    "extsprintf": {
+      "version": "1.3.0",
+      "from": "extsprintf@1.3.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/extsprintf/-/extsprintf-1.3.0.tgz"
+    },
+    "fast-deep-equal": {
+      "version": "1.0.0",
+      "from": "fast-deep-equal@>=1.0.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz"
+    },
+    "forever-agent": {
+      "version": "0.6.1",
+      "from": "forever-agent@>=0.6.1 <0.7.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/forever-agent/-/forever-agent-0.6.1.tgz"
+    },
+    "form-data": {
+      "version": "2.3.1",
+      "from": "form-data@>=2.3.1 <2.4.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/form-data/-/form-data-2.3.1.tgz"
+    },
+    "getpass": {
+      "version": "0.1.7",
+      "from": "getpass@>=0.1.1 <0.2.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/getpass/-/getpass-0.1.7.tgz"
+    },
+    "har-schema": {
+      "version": "2.0.0",
+      "from": "har-schema@>=2.0.0 <3.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/har-schema/-/har-schema-2.0.0.tgz"
+    },
+    "har-validator": {
+      "version": "5.0.3",
+      "from": "har-validator@>=5.0.3 <5.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/har-validator/-/har-validator-5.0.3.tgz"
+    },
+    "hawk": {
+      "version": "6.0.2",
+      "from": "hawk@>=6.0.2 <6.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/hawk/-/hawk-6.0.2.tgz"
+    },
+    "hoek": {
+      "version": "4.2.0",
+      "from": "hoek@>=4.0.0 <5.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/hoek/-/hoek-4.2.0.tgz"
+    },
+    "http-signature": {
+      "version": "1.2.0",
+      "from": "http-signature@>=1.2.0 <1.3.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/http-signature/-/http-signature-1.2.0.tgz"
+    },
+    "is-typedarray": {
+      "version": "1.0.0",
+      "from": "is-typedarray@>=1.0.0 <1.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/is-typedarray/-/is-typedarray-1.0.0.tgz"
+    },
+    "isstream": {
+      "version": "0.1.2",
+      "from": "isstream@>=0.1.2 <0.2.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/isstream/-/isstream-0.1.2.tgz"
+    },
+    "jsbn": {
+      "version": "0.1.1",
+      "from": "jsbn@>=0.1.0 <0.2.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/jsbn/-/jsbn-0.1.1.tgz",
+      "optional": true
+    },
     "json-promise": {
       "version": "1.1.8",
-      "from": "http://registry.npmjs.org/json-promise/-/json-promise-1.1.8.tgz",
+      "from": "json-promise@>=1.1.8 <2.0.0",
       "resolved": "http://registry.npmjs.org/json-promise/-/json-promise-1.1.8.tgz",
       "dependencies": {
         "bluebird": {
           "version": "2.2.2",
-          "from": "http://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz",
+          "from": "bluebird@2.2.2",
           "resolved": "http://registry.npmjs.org/bluebird/-/bluebird-2.2.2.tgz"
         }
       }
     },
+    "json-schema": {
+      "version": "0.2.3",
+      "from": "json-schema@0.2.3",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/json-schema/-/json-schema-0.2.3.tgz"
+    },
+    "json-schema-traverse": {
+      "version": "0.3.1",
+      "from": "json-schema-traverse@>=0.3.0 <0.4.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz"
+    },
+    "json-stable-stringify": {
+      "version": "1.0.1",
+      "from": "json-stable-stringify@>=1.0.1 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz"
+    },
+    "json-stringify-safe": {
+      "version": "5.0.1",
+      "from": "json-stringify-safe@>=5.0.1 <5.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz"
+    },
+    "jsonify": {
+      "version": "0.0.0",
+      "from": "jsonify@>=0.0.0 <0.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/jsonify/-/jsonify-0.0.0.tgz"
+    },
+    "jsprim": {
+      "version": "1.4.1",
+      "from": "jsprim@>=1.2.2 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/jsprim/-/jsprim-1.4.1.tgz"
+    },
+    "mime-db": {
+      "version": "1.30.0",
+      "from": "mime-db@>=1.30.0 <1.31.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/mime-db/-/mime-db-1.30.0.tgz"
+    },
+    "mime-types": {
+      "version": "2.1.17",
+      "from": "mime-types@>=2.1.17 <2.2.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/mime-types/-/mime-types-2.1.17.tgz"
+    },
+    "minimist": {
+      "version": "0.0.8",
+      "from": "minimist@0.0.8",
+      "resolved": "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
+    },
     "mkdirp": {
-      "version": "0.5.0",
-      "from": "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
-      "resolved": "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
-      "dependencies": {
-        "minimist": {
-          "version": "0.0.8",
-          "from": "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
-          "resolved": "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
-        }
-      }
+      "version": "0.5.1",
+      "from": "mkdirp@>=0.5.0 <0.6.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/mkdirp/-/mkdirp-0.5.1.tgz"
+    },
+    "oauth-sign": {
+      "version": "0.8.2",
+      "from": "oauth-sign@>=0.8.2 <0.9.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/oauth-sign/-/oauth-sign-0.8.2.tgz"
     },
     "optimist": {
       "version": "0.6.1",
-      "from": "http://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz",
-      "resolved": "http://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz",
-      "dependencies": {
-        "wordwrap": {
-          "version": "0.0.2",
-          "from": "http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz",
-          "resolved": "http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz"
-        },
-        "minimist": {
-          "version": "0.0.10",
-          "from": "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
-          "resolved": "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz"
-        }
-      }
+      "from": "optimist@>=0.6.1 <0.7.0",
+      "resolved": "http://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz"
+    },
+    "performance-now": {
+      "version": "2.1.0",
+      "from": "performance-now@>=2.1.0 <3.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/performance-now/-/performance-now-2.1.0.tgz"
     },
     "pretty-data": {
       "version": "0.40.0",
-      "from": "https://registry.npmjs.org/pretty-data/-/pretty-data-0.40.0.tgz",
+      "from": "pretty-data@>=0.40.0 <0.41.0",
       "resolved": "https://registry.npmjs.org/pretty-data/-/pretty-data-0.40.0.tgz"
     },
+    "punycode": {
+      "version": "1.4.1",
+      "from": "punycode@>=1.4.1 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/punycode/-/punycode-1.4.1.tgz"
+    },
+    "qs": {
+      "version": "6.5.1",
+      "from": "qs@>=6.5.1 <6.6.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/qs/-/qs-6.5.1.tgz"
+    },
     "request": {
-      "version": "2.51.0",
-      "from": "http://registry.npmjs.org/request/-/request-2.51.0.tgz",
-      "resolved": "http://registry.npmjs.org/request/-/request-2.51.0.tgz",
-      "dependencies": {
-        "bl": {
-          "version": "0.9.4",
-          "from": "http://registry.npmjs.org/bl/-/bl-0.9.4.tgz",
-          "resolved": "http://registry.npmjs.org/bl/-/bl-0.9.4.tgz",
-          "dependencies": {
-            "readable-stream": {
-              "version": "1.0.33",
-              "from": "http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz",
-              "resolved": "http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz",
-              "dependencies": {
-                "core-util-is": {
-                  "version": "1.0.1",
-                  "from": "http://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz",
-                  "resolved": "http://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz"
-                },
-                "isarray": {
-                  "version": "0.0.1",
-                  "from": "http://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz",
-                  "resolved": "http://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
-                },
-                "string_decoder": {
-                  "version": "0.10.31",
-                  "from": "http://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz",
-                  "resolved": "http://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz"
-                },
-                "inherits": {
-                  "version": "2.0.1",
-                  "from": "http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz",
-                  "resolved": "http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
-                }
-              }
-            }
-          }
-        },
-        "caseless": {
-          "version": "0.8.0",
-          "from": "http://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz",
-          "resolved": "http://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz"
-        },
-        "forever-agent": {
-          "version": "0.5.2",
-          "from": "http://registry.npmjs.org/forever-agent/-/forever-agent-0.5.2.tgz",
-          "resolved": "http://registry.npmjs.org/forever-agent/-/forever-agent-0.5.2.tgz"
-        },
-        "form-data": {
-          "version": "0.2.0",
-          "from": "http://registry.npmjs.org/form-data/-/form-data-0.2.0.tgz",
-          "resolved": "http://registry.npmjs.org/form-data/-/form-data-0.2.0.tgz",
-          "dependencies": {
-            "async": {
-              "version": "0.9.0",
-              "from": "http://registry.npmjs.org/async/-/async-0.9.0.tgz",
-              "resolved": "http://registry.npmjs.org/async/-/async-0.9.0.tgz"
-            },
-            "mime-types": {
-              "version": "2.0.7",
-              "from": "http://registry.npmjs.org/mime-types/-/mime-types-2.0.7.tgz",
-              "resolved": "http://registry.npmjs.org/mime-types/-/mime-types-2.0.7.tgz",
-              "dependencies": {
-                "mime-db": {
-                  "version": "1.5.0",
-                  "from": "http://registry.npmjs.org/mime-db/-/mime-db-1.5.0.tgz",
-                  "resolved": "http://registry.npmjs.org/mime-db/-/mime-db-1.5.0.tgz"
-                }
-              }
-            }
-          }
-        },
-        "json-stringify-safe": {
-          "version": "5.0.0",
-          "from": "http://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz",
-          "resolved": "http://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz"
-        },
-        "mime-types": {
-          "version": "1.0.2",
-          "from": "http://registry.npmjs.org/mime-types/-/mime-types-1.0.2.tgz",
-          "resolved": "http://registry.npmjs.org/mime-types/-/mime-types-1.0.2.tgz"
-        },
-        "node-uuid": {
-          "version": "1.4.2",
-          "from": "http://registry.npmjs.org/node-uuid/-/node-uuid-1.4.2.tgz",
-          "resolved": "http://registry.npmjs.org/node-uuid/-/node-uuid-1.4.2.tgz"
-        },
-        "qs": {
-          "version": "2.3.3",
-          "from": "http://registry.npmjs.org/qs/-/qs-2.3.3.tgz",
-          "resolved": "http://registry.npmjs.org/qs/-/qs-2.3.3.tgz"
-        },
-        "tunnel-agent": {
-          "version": "0.4.0",
-          "from": "http://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.4.0.tgz",
-          "resolved": "http://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
-        },
-        "tough-cookie": {
-          "version": "0.12.1",
-          "from": "http://registry.npmjs.org/tough-cookie/-/tough-cookie-0.12.1.tgz",
-          "resolved": "http://registry.npmjs.org/tough-cookie/-/tough-cookie-0.12.1.tgz",
-          "dependencies": {
-            "punycode": {
-              "version": "1.3.2",
-              "from": "http://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz",
-              "resolved": "http://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz"
-            }
-          }
-        },
-        "http-signature": {
-          "version": "0.10.1",
-          "from": "http://registry.npmjs.org/http-signature/-/http-signature-0.10.1.tgz",
-          "resolved": "http://registry.npmjs.org/http-signature/-/http-signature-0.10.1.tgz",
-          "dependencies": {
-            "assert-plus": {
-              "version": "0.1.5",
-              "from": "http://registry.npmjs.org/assert-plus/-/assert-plus-0.1.5.tgz",
-              "resolved": "http://registry.npmjs.org/assert-plus/-/assert-plus-0.1.5.tgz"
-            },
-            "asn1": {
-              "version": "0.1.11",
-              "from": "http://registry.npmjs.org/asn1/-/asn1-0.1.11.tgz",
-              "resolved": "http://registry.npmjs.org/asn1/-/asn1-0.1.11.tgz"
-            },
-            "ctype": {
-              "version": "0.5.3",
-              "from": "http://registry.npmjs.org/ctype/-/ctype-0.5.3.tgz",
-              "resolved": "http://registry.npmjs.org/ctype/-/ctype-0.5.3.tgz"
-            }
-          }
-        },
-        "oauth-sign": {
-          "version": "0.5.0",
-          "from": "http://registry.npmjs.org/oauth-sign/-/oauth-sign-0.5.0.tgz",
-          "resolved": "http://registry.npmjs.org/oauth-sign/-/oauth-sign-0.5.0.tgz"
-        },
-        "hawk": {
-          "version": "1.1.1",
-          "from": "hawk@1.1.1",
-          "resolved": "https://registry.npmjs.org/hawk/-/hawk-1.1.1.tgz",
-          "dependencies": {
-            "hoek": {
-              "version": "0.9.1",
-              "from": "http://registry.npmjs.org/hoek/-/hoek-0.9.1.tgz",
-              "resolved": "http://registry.npmjs.org/hoek/-/hoek-0.9.1.tgz"
-            },
-            "boom": {
-              "version": "0.4.2",
-              "from": "http://registry.npmjs.org/boom/-/boom-0.4.2.tgz",
-              "resolved": "http://registry.npmjs.org/boom/-/boom-0.4.2.tgz"
-            },
-            "cryptiles": {
-              "version": "0.2.2",
-              "from": "http://registry.npmjs.org/cryptiles/-/cryptiles-0.2.2.tgz",
-              "resolved": "http://registry.npmjs.org/cryptiles/-/cryptiles-0.2.2.tgz"
-            },
-            "sntp": {
-              "version": "0.2.4",
-              "from": "http://registry.npmjs.org/sntp/-/sntp-0.2.4.tgz",
-              "resolved": "http://registry.npmjs.org/sntp/-/sntp-0.2.4.tgz"
-            }
-          }
-        },
-        "aws-sign2": {
-          "version": "0.5.0",
-          "from": "http://registry.npmjs.org/aws-sign2/-/aws-sign2-0.5.0.tgz",
-          "resolved": "http://registry.npmjs.org/aws-sign2/-/aws-sign2-0.5.0.tgz"
-        },
-        "stringstream": {
-          "version": "0.0.4",
-          "from": "http://registry.npmjs.org/stringstream/-/stringstream-0.0.4.tgz",
-          "resolved": "http://registry.npmjs.org/stringstream/-/stringstream-0.0.4.tgz"
-        },
-        "combined-stream": {
-          "version": "0.0.7",
-          "from": "http://registry.npmjs.org/combined-stream/-/combined-stream-0.0.7.tgz",
-          "resolved": "http://registry.npmjs.org/combined-stream/-/combined-stream-0.0.7.tgz",
-          "dependencies": {
-            "delayed-stream": {
-              "version": "0.0.5",
-              "from": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz",
-              "resolved": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz"
-            }
-          }
-        }
-      }
+      "version": "2.83.0",
+      "from": "request@>=2.81.0 <3.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/request/-/request-2.83.0.tgz"
+    },
+    "safe-buffer": {
+      "version": "5.1.1",
+      "from": "safe-buffer@>=5.1.1 <6.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/safe-buffer/-/safe-buffer-5.1.1.tgz"
+    },
+    "sntp": {
+      "version": "2.0.2",
+      "from": "sntp@>=2.0.0 <3.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/sntp/-/sntp-2.0.2.tgz"
+    },
+    "sshpk": {
+      "version": "1.13.1",
+      "from": "sshpk@>=1.7.0 <2.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/sshpk/-/sshpk-1.13.1.tgz"
+    },
+    "stringstream": {
+      "version": "0.0.5",
+      "from": "stringstream@>=0.0.5 <0.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/stringstream/-/stringstream-0.0.5.tgz"
+    },
+    "tough-cookie": {
+      "version": "2.3.3",
+      "from": "tough-cookie@>=2.3.3 <2.4.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/tough-cookie/-/tough-cookie-2.3.3.tgz"
+    },
+    "tunnel-agent": {
+      "version": "0.6.0",
+      "from": "tunnel-agent@>=0.6.0 <0.7.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/tunnel-agent/-/tunnel-agent-0.6.0.tgz"
+    },
+    "tweetnacl": {
+      "version": "0.14.5",
+      "from": "tweetnacl@>=0.14.0 <0.15.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/tweetnacl/-/tweetnacl-0.14.5.tgz",
+      "optional": true
+    },
+    "uuid": {
+      "version": "3.1.0",
+      "from": "uuid@>=3.1.0 <4.0.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/uuid/-/uuid-3.1.0.tgz"
+    },
+    "verror": {
+      "version": "1.10.0",
+      "from": "verror@1.10.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/verror/-/verror-1.10.0.tgz"
+    },
+    "wordwrap": {
+      "version": "0.0.3",
+      "from": "wordwrap@>=0.0.2 <0.1.0",
+      "resolved": "http://apim-ci1.rtp.raleigh.ibm.com:8080/wordwrap/-/wordwrap-0.0.3.tgz"
     }
   }
 }
