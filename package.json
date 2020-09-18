@@ -1,6 +1,6 @@
 {
   "name": "json-schema-generator",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "JSON schema generator based on draft-v4.",
   "main": "./index.js",
   "directories": {
@@ -19,7 +19,7 @@
     "mkdirp": "^0.5.0",
     "optimist": "^0.6.1",
     "pretty-data": "^0.40.0",
-    "request": "^2.81.0"
+    "request": "2.88.2"
   },
   "devDependencies": {
     "chai": "^1.9.2",
