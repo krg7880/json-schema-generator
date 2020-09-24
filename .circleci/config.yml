@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn test
+
+  release:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn release
+
+workflows:
+  version: 2
+  test_and_release:
+    jobs:
+      - test
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test

@@ -1,5 +1,4 @@
-var path = require('path');
-var utils = require(path.resolve(process.env.PWD + '/lib/utils'));
+var utils = require('../lib/utils');
 var chai = require('chai');
 chai.use(require('chai-json-schema'));
 var expect = chai.expect;
