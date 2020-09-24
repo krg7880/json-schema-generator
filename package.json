@@ -35,7 +35,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "release": "sl-scripts release"
+    "release": "semantic-release"
   },
   "husky": {
     "hooks": {
