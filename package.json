@@ -48,7 +48,8 @@
     ]
   },
   "release": {
-    "extends": "@stoplight/scripts/release"
+    "extends": "@stoplight/scripts/release",
+    "pkgRoot": "."
   },
   "keywords": [
     "json schema",
