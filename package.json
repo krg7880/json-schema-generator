@@ -6,6 +6,10 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krg7880/json-schema-generator.git"
+  },
   "bin": {
     "json-schema-generator": "./bin/cli.js"
   },
